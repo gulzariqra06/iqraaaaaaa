@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealixAI | AI Assistant</title>
+    <meta name="description" content="Professional AI video script generator and high-fidelity image forge.">
+    <link rel="stylesheet" href="style.css?v=5001">
+    <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/solid/brain.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="realix-body">
+    <div id="neural-cursor-glow"></div>
+    <div id="neural-background-mesh"></div>
+    
+    <div id="realix-app-root">
+        <header>
+            <div class="logo">
+                <i class="fas fa-brain-circuit"></i>
+                <span>REALIX.AI</span>
+            </div>
+            <div class="header-status">
+                <div id="neural-status-led"></div>
+                <span>Gemini 2.5 Flash Lite Active</span>
+            </div>
+        </header>
+
+        <main id="main-dashboard" class="dual-pane">
+            <!-- Left Pane: Script Architect -->
+            <section id="script-pane" class="pane">
+                <div class="pane-header">
+                    <h1>Script <span class="gradient-text">Architect</span></h1>
+                    <p>Construct high-fidelity narrative structures with neural precision.</p>
+                </div>
+                <div class="card">
+                    <div class="input-group">
+                        <label for="script-topic">Production Concept</label>
+                        <textarea id="script-topic" placeholder="e.g. A high-octane 30-second commercial for a luxury spaceship..."></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="script-tone">Architectural Tone</label>
+                        <select id="script-tone">
+                            <option value="enthusiastic">Vibrant & Energetic</option>
+                            <option value="professional">Sleek & Corporate</option>
+                            <option value="mysterious">Dark & Cinematic</option>
+                            <option value="minimalist">Clean & Modern</option>
+                        </select>
+                    </div>
+                    <button id="generate-script-btn" class="primary-btn full-width">Initialize Script Generation</button>
+                    <div id="script-result" class="result-area hidden"></div>
+                </div>
+            </section>
+
+            <!-- Right Pane: Neural Chat -->
+            <section id="chat-pane" class="pane">
+                <div class="pane-header">
+                    <h2>Gemini <span class="gradient-text">Assistant</span></h2>
+                    <p>Powered by Google Gemini 2.5 Flash Lite.</p>
+                </div>
+                <div class="chat-container card">
+                    <div id="realix-message-stream">
+                        <!-- Messages Injected Here -->
+                        <div class="phoenix-msg msg-ai">Gemini AI Assistant Initialized. How can I assist you with your production today?</div>
+                    </div>
+                    <div id="neural-progress-bar"></div>
+                    <div class="chat-footer">
+                        <div class="input-wrapper glass">
+                            <input type="text" id="realix-input" placeholder="Transmit your directive...">
+                            <button id="realix-send"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div class="debug-row">
+                            <button id="neural-debug-btn"><i class="fas fa-microchip"></i> Diagnostics</button>
+                            <span>v5002.8 Stable</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="neural_v5002.js"></script>
+    <script>
+        const glow = document.getElementById('neural-cursor-glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+        });
+    </script>
+</body>
+</html>
